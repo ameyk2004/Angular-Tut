@@ -1,0 +1,24 @@
+<!-- The ng-if directive is used to conditionally include or remove an element from the DOM based on an expression. -->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <button ng-click="toggleMessage()">Toggle Message</button>
+    <p ng-if="showMessage">This is a conditional message!</p>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope) {
+            $scope.showMessage = false;
+            $scope.toggleMessage = function() {
+                $scope.showMessage = !$scope.showMessage;  // Toggle the message
+            };
+        });
+    </script>
+
+</body>
+</html>

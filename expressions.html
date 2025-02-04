@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Expressions Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <!-- Expense calculation using numbers -->
+    <h3>Expense on Books:</h3>
+    <p>Expense on Books: {{ cost * quantity }} Rs</p>
+
+    <!-- String concatenation -->
+    <h3>Welcome Message:</h3>
+    <p>Hello {{ Fname + " " + Lname }}</p>
+
+    <!-- Object data -->
+    <h3>Student Information:</h3>
+    <p>Roll No: {{ student.rollno }}</p>
+
+    <!-- Array data -->
+    <h3>Marks:</h3>
+    <p>Marks (Maths): {{ marks[3] }}</p>
+
+    <script>
+        // AngularJS Application
+        var app = angular.module('myApp', []);
+
+        app.controller('myCtrl', function($scope) {
+            // Number data (cost and quantity)
+            $scope.cost = 200;
+            $scope.quantity = 3;
+
+            // String data (first name and last name)
+            $scope.Fname = "Amey";
+            $scope.Lname = "Kulkarni";
+
+            // Object data (student)
+            $scope.student = {
+                rollno: 101,
+                name: "Amey Kulkarni"
+            };
+
+            // Array data (marks)
+            $scope.marks = [95, 88, 76, 100, 92];
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- The ng-repeat directive is used to repeat an HTML element for each item in an array or object. It is similar to the for loop in JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <h3>List of Users:</h3>
+    <ul>
+        <li ng-repeat="user in users">{{ user.name }} ({{ user.age }} years old)</li>
+    </ul>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope) {
+            $scope.users = [
+                {name: "Amey", age: 21},
+                {name: "Advait", age: 20},
+                {name: "Tirthraj", age: 20}
+            ];
+        });
+    </script>
+
+</body>
+</html>

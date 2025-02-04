@@ -1,0 +1,44 @@
+<!-- BEFORE tAKING THIS EXPLAIN EXAMPLE FROM PPT -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Directives Example</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" class="container mt-5">
+    <h2 class="text-primary text-center">AngularJS Directives: ng-model & ng-bind</h2>
+
+    <!-- Form Group: Input Field -->
+    <div class="mb-3">
+        <label for="nameInput" class="form-label">Enter Your Name:</label>
+        <input type="text" id="nameInput" class="form-control" ng-model="username" placeholder="Type your name here">
+    </div>
+
+    <!-- Using ng-bind to display the username -->
+    <p class="alert alert-info">Hello, <span ng-bind="username"></span>!</p>
+
+    <button class="btn btn-danger" ng-click="clearName()">Clear Name</button>
+
+    <!-- AngularJS Script -->
+    <script>
+        // Step 1: Create an AngularJS Application (Module)
+        var app = angular.module("myApp", []);
+
+        // Step 2: Create a Controller
+        app.controller("myCtrl", function($scope) {
+            // Define a variable to store the user's name
+            $scope.username = "";
+
+        
+            $scope.clearName = function() {
+                $scope.username = "";
+            };
+        });
+    </script>
+
+</body>
+</html>

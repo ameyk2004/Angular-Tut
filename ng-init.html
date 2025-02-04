@@ -1,0 +1,23 @@
+<!-- The ng-init directive is used to initialize variables or set expressions on the scope when the page is loaded. It allows you to define variables or run expressions directly in the HTML view, usually for simple tasks.-->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <!-- Initialize 'message' directly in the HTML -->
+    <div ng-init="message = 'Hello from ng-init!'">
+        <h3>{{ message }}</h3>
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope) {
+            // No need to initialize 'message' here
+        });
+    </script>
+
+</body>
+</html>

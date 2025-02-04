@@ -1,0 +1,25 @@
+<!-- The ng-click directive is used to attach a function to an HTML element that will be executed when the element is clicked. -->
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+
+    <button ng-click="increaseCount()">Click to Increase Count</button>
+    <p>Count: {{ count }}</p>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function($scope) {
+            $scope.count = 0;
+            $scope.increaseCount = function() {
+                console.log("Count Increasing");
+                $scope.count += 1;  // Increase the count
+            };
+        });
+    </script>
+
+</body>
+</html>
