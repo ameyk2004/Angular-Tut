@@ -104,3 +104,7 @@ Example:
 ```html
 <div ng-view></div>
 ```
+<img src="results/main_directives.png">
+<img src="results/button.png">
+<img src="results/bind.png">
+<img src="results/ng-repeat.png">
